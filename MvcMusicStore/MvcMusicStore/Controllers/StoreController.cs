@@ -33,7 +33,8 @@ namespace MvcMusicStore.Controllers
         // GET: /Store/Details
         public ActionResult Details(int id)
         {
-            return View(new Album { Title = "Album " + id });
+            var album = storeDB.Albums.Find(id);
+            return View(album);
         }
 
     }
